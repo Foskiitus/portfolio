@@ -8,6 +8,15 @@ export const featuredPortfolio = [
         title: "TempoApp",
         img: "assets/portfolio/mobile/tempoApp.jpg",
     },
+    {
+        id: 3,
+        title: "Motocavaquinhos",
+        img: "assets/portfolio/web/motocavaquinho.png",
+    },{
+        id: 4,
+        title: "Ritual Restaurante",
+        img: "assets/portfolio/web/ritual-restaurante.png",
+    },
 ]
 
 export const webPortfolio = [

@@ -1,9 +1,10 @@
 $mainColor: #15023a;
+$tundora: #4b4848;
 
 $width: 768px;
 
 @mixin mobile {
-    @media (max-width: #{$width}){
-        @content
-    }
+  @media (max-width: #{$width}) {
+    @content;
+  }
 }
