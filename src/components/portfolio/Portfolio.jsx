@@ -2,11 +2,7 @@ import { useEffect, useState } from "react";
 import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
 import {
-  featuredPortfolio,
-  webPortfolio,
-  mobilePortfolio,
-  designPortfolio,
-  brandingPortfolio,
+  PortfolioData
 } from "../../data";
 
 export default function Portfolio() {
@@ -36,28 +32,49 @@ export default function Portfolio() {
     },
   ];
 
+  const webSites = []
+  const mobile = []
+  const design = []
+  const branding = []
+  const featuredPortfolio = []
+
+  PortfolioData.map((d) => (
+    d.featured === true ? featuredPortfolio.push(d) : '',
+    d.type === "web" ? webSites.push(d) :
+      d.type === "mobile" ? mobile.push(d) :
+        d.type === "design" ? design.push(d) :
+          d.type === "branding" ? branding.push(d) : ''
+  ))
+
   useEffect(() => {
     switch (selected) {
       case "featured":
         setData(featuredPortfolio);
         break;
       case "web":
-        setData(webPortfolio);
+        setData(webSites);
         break;
       case "mobile":
-        setData(mobilePortfolio);
+        setData(mobile);
         break;
       case "design":
-        setData(designPortfolio);
+        setData(design);
         break;
       case "branding":
-        setData(brandingPortfolio);
+        setData(branding);
         break;
       default:
-        setData(featuredPortfolio);
+        setData(mobile);
     }
   }, [selected]);
 
+  // function limitCaracteres(string) {
+  //   if (string.length > 250) {
+  //     return string.slice(0, 250) + ` ...`;
+  //   } else {
+  //     return string;
+  //   }
+  // }
   return (
     <div className="portfolio" id="portfolio">
       <h1>Portfolio</h1>
@@ -75,8 +92,13 @@ export default function Portfolio() {
       <div className="container">
         {data.map((d) => (
           <div className="item" key={d.id}>
-            <img src={d.img} alt={d.title} />
-            <h3>{d.title}</h3>
+            <div className="top">
+              <img src={d.img} alt={d.title} />
+              <h3>Ver Projecto</h3>
+            </div>
+            <div className="bottom">
+              <h3>{d.title}</h3>
+            </div>
           </div>
         ))}
       </div>
