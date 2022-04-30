@@ -173,3 +173,30 @@ export const testemonialsData = [
     featured: true,
   },
 ];
+
+export const topCardsInfo = [
+  {
+    id: 1,
+    icon: "./assets/pencil-and-ruler.png",
+    title: "Branding",
+    desc: "Pensamos e criamos a imagem da sua empresa",
+  },
+  {
+    id: 2,
+    icon: "./assets/computer.png",
+    title: "Website",
+    desc: "A identidade da sua empresa com elegância",
+  },
+  {
+    id: 3,
+    icon: "./assets/mobile-phone.png",
+    title: "Mobile",
+    desc: "A ideia do seu negócio ao alcance de todos",
+  },
+  {
+    id: 4,
+    icon: "./assets/megaphone.png",
+    title: "Marketing",
+    desc: "Ative a pegada digital do seu negócio",
+  },
+];

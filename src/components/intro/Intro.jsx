@@ -10,7 +10,7 @@ export default function Intro() {
         <div className="left"><h2>Confie o seu projeto na experiência e rigor que nos caracteriza.</h2></div>
         <div className="right">
           <button>
-            <span className="text">Hover</span>
+            <span className="text">Fale connosco</span>
             <div className="icon-container">
               <div className="icon icon--left">
                 <svg>
