@@ -1,0 +1,219 @@
+@import "../../global.scss";
+
+.servicos {
+  background-color: $white;
+  padding-top: 30px;
+
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-inline: 10px;
+
+    @include breakpoint(desktop) {
+      margin: 0 auto;
+    }
+
+    .left {
+      flex: 1 !important;
+      min-width: 100% !important;
+      margin-bottom: 40px;
+      align-items: center !important;
+      justify-content: center !important;
+      align-content: center !important;
+      text-align: center !important;
+
+      @include breakpoint(tablet) {
+        margin-bottom: 10px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        align-content: center !important;
+        text-align: center !important;
+      }
+      @include breakpoint(tablet-horizontal) {
+        min-width: 45% !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        align-content: flex-start !important;
+        text-align: left !important;
+      }
+    }
+
+    .col2 {
+      @include breakpoint(tablet) {
+        flex-direction: row !important;
+        margin-top: 10px !important;
+      }
+      @include breakpoint(tablet-horizontal) {
+        margin-top: 50px !important;
+      }
+    }
+
+    .col {
+      flex: 0.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      min-width: 100%;
+      text-align: center;
+
+      @include breakpoint(tablet) {
+        min-width: 22%;
+        text-align: left;
+        align-content: flex-start;
+        align-items: flex-start;
+      }
+
+      h5 {
+        color: #3b8ed2;
+        font-size: 11px;
+        font-family: $fontPoppins;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      h2 {
+        font-size: 25.5px;
+        font-family: $fontPoppins;
+        color: #151221;
+        line-height: 1.5;
+        font-weight: 500;
+        letter-spacing: -0.04em;
+
+        @include breakpoint(tablet) {
+          font-size: 40px;
+        }
+      }
+
+      button {
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+        --width: 250px;
+        --height: 50px;
+        border: 0;
+        position: relative;
+        min-width: var(--width);
+        min-height: var(--height);
+        border-radius: 6px;
+        color: $btn-bg;
+        font-family: "Montserrat";
+        font-weight: bold;
+        font-size: 13px;
+        background: rgba(234, 234, 234, 0.884);
+        cursor: pointer;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        .text,
+        .icon-container {
+          position: relative;
+          z-index: 2;
+        }
+
+        .icon-container {
+          --icon-size: 25px;
+          position: relative;
+          width: var(--icon-size);
+          height: var(--icon-size);
+          margin-left: 15px;
+          transition: transform 500ms ease;
+
+          .icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            transition: transform 500ms ease, opacity 250ms ease;
+
+            &--left {
+              transform: translateX(-200%);
+              opacity: 0;
+            }
+
+            svg {
+              width: 100%;
+              height: 100%;
+              fill: $btn-bg;
+            }
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: $white;
+          border-radius: 6px;
+          z-index: 1;
+          transition: transform 500ms ease;
+        }
+
+        &:hover {
+          &::after {
+            transform: translateX(80%);
+          }
+
+          .icon-container {
+            transform: translateX(45%);
+
+            @include breakpoint(tablet) {
+              transform: translateX(40%);
+            }
+            .icon {
+              &--left {
+                transform: translateX(0);
+                opacity: 1;
+
+                @include breakpoint(tablet) {
+                  transform: translateX(0);
+                  opacity: 1;
+                }
+              }
+              &--right {
+                transform: translateX(200%);
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        @include breakpoint(tablet) {
+          text-align: left;
+        }
+
+        h3 {
+          font-size: 15px;
+          font-family: $fontPoppins;
+          color: #151221;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 15px;
+          font-family: $fontPoppins;
+          color: #687188;
+        }
+      }
+    }
+  }
+}

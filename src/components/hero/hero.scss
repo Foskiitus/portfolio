@@ -1,8 +1,6 @@
 @import "../../global.scss";
 
 .hero {
-  max-width: $max-width;
-  margin: 0 auto;
   background: linear-gradient(to bottom, #f7f8fd, rgba(214, 218, 236, 1));
 
   .row {
@@ -11,6 +9,9 @@
     gap: 1.5rem;
     align-items: center;
     justify-content: center;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding-bottom: 30px;
 
     @include breakpoint(tablet) {
       flex-direction: row;
@@ -23,6 +24,10 @@
     margin: 0 auto;
     align-items: center;
     justify-content: center;
+    padding-top: 30px;
+    @include breakpoint(tablet) {
+      padding-top: 0;
+    }
 
     img {
       width: 90%;
@@ -55,9 +60,11 @@
       color: #151221;
       line-height: 1.5;
       font-weight: 500;
+      text-align: center;
 
       @include breakpoint(tablet) {
         font-size: 30px;
+        text-align: left;
       }
     }
     p {
@@ -93,8 +100,7 @@
       justify-content: center;
       align-items: center;
       margin: 0 1rem;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
       .text,
       .icon-container {

@@ -2,6 +2,7 @@ import "./App.scss";
 import Intro from "./components/intro/Intro";
 import CardsRow from "./components/cardsRow/CardsRow";
 import Hero from "./components/hero/Hero";
+import Servicos from "./components/servicos/Servicos";
 
 function App() {
 
@@ -10,6 +11,8 @@ function App() {
       <Intro />
       <CardsRow />
       <Hero />
+      <Servicos />
+
     </div>
   );
 }

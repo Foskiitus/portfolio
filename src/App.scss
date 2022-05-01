@@ -6,6 +6,8 @@
 
   @include breakpoint(tablet) {
     margin: 0 -5px;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
